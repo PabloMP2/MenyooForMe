@@ -20,7 +20,7 @@ namespace sub
 {
 	void MainMenu()
 	{
-		AddTitle("MENYOO");
+		AddTitle("Krypton");
 
 		//SubMenus 
 		AddOption("Player", null, nullFunc, SUB::PLAYEROPS);
