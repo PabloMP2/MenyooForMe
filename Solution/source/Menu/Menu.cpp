@@ -146,8 +146,8 @@ INT8 font_breaks = 1;
 INT8 font_xyzh = 0;
 INT8 font_speedo = 0;
 
-RGBA titlebox(0, 255, 255, 247);
-RGBA BG(10, 10, 10, 200);
+RGBA titlebox(128, 255, 0, 255);
+RGBA BG(10, 10, 10, 255);
 RGBA titletext(255, 255, 255, 255);
 RGBA optiontext(255, 255, 255, 255);
 RGBA selectedtext(0, 0, 0, 255);
@@ -404,23 +404,10 @@ void Menu::titlebox_draw()
 		//DxHookIMG::titleui_spooner.Draw(0, Vector2(0.16f + menuPos.x, 0.0989f + menuPos.y), Vector2(0.20f, 0.083f), 0.0f, RGBA(255, 255, 255, titlebox.A)); break;
 
 	default:
-		if (gradients) DRAW_SPRITE("CommonMenu", "Gradient_Nav"/*"interaction_bgd"*/, 0.16f + menuPos.x, 0.1175f + menuPos.y, 0.20f, 0.083f, 0.0f, titlebox.R, titlebox.G, titlebox.B, titlebox.A);
-		else DRAW_RECT(0.16f + menuPos.x, 0.1175f + menuPos.y, 0.20f, 0.083f, titlebox.R, titlebox.G, titlebox.B, titlebox.A);
-		_SCREEN_DRAW_POSITION_END();
-		titletext_ALPHA_DIS_TEMP = false;
-		//glare_test();
+		DRAW_SPRITE("Header", "H1"/*"interaction_bgd"*/, 0.16f + menuPos.x, 0.1175f + menuPos.y, 0.20f, 0.083f, 0.0f, 255, 255, 255, 255);
 		break;
 
 	}
-
-	if (titletext_ALPHA_DIS_TEMP) // Draw titlebox lower stripe
-	{
-		if (gradients) DRAW_SPRITE("CommonMenu", "Gradient_Nav"/*"interaction_bgd"*/, 0.16f + menuPos.x, 0.1496f + menuPos.y, 0.20f, 0.02f, 0.0f, titlebox.R, titlebox.G, titlebox.B, titlebox.A);
-		else DRAW_RECT(0.16f + menuPos.x, 0.1496f + menuPos.y, 0.20f, 0.02f, titlebox.R, titlebox.G, titlebox.B, titlebox.A);
-
-	}
-
-
 }
 void Menu::background()
 {
